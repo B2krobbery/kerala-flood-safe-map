@@ -1,73 +1,155 @@
-function updateDistrict(
-name,
-risk,
-info,
-shelters,
-helpline
-){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala Flood Safe Interactive Map</title>
 
-document.getElementById("districtName").innerText = name;
-document.getElementById("riskLevel").innerText = risk;
-document.getElementById("safetyInfo").innerText = info;
-document.getElementById("helpline").innerText = helpline;
+<link rel="stylesheet" href="style.css">
+</head>
 
-const shelterContainer =
-document.getElementById("shelters");
+<body>
 
-shelterContainer.innerHTML = "";
+<header>
+<h1>Kerala Flood Safe Interactive Map</h1>
+<p>Interactive Disaster Awareness & Emergency Preparedness Dashboard</p>
+</header>
 
-shelters.forEach(function(shelter){
+<div class="container">
 
-const p = document.createElement("p");
+<div class="map-section">
 
-p.innerText = shelter;
+<h2 class="section-title">
+Kerala Flood Risk Map
+</h2>
 
-shelterContainer.appendChild(p);
+<div class="map-container">
+<img src="kerala-map.svg" alt="Kerala Map">
+</div>
 
-});
+<div class="district-buttons">
 
-}
+<button class="district-btn high"
+onclick="updateDistrict(
+'Alappuzha',
+'HIGH',
+'High flood susceptibility detected.',
+[
+'Government Higher Secondary School Relief Camp',
+'Alappuzha Community Hall Shelter',
+'Taluk Emergency Relief Center'
+],
+'1077'
+)">
+Alappuzha
+</button>
 
-function showGuide(){
+<button class="district-btn medium"
+onclick="updateDistrict(
+'Ernakulam',
+'MEDIUM',
+'Urban flooding possible during heavy rainfall.',
+[
+'Government School Shelter',
+'Community Relief Hall',
+'District Emergency Support Center'
+],
+'1077'
+)">
+Ernakulam
+</button>
 
-alert(
-"KERALA FLOOD EMERGENCY PREPAREDNESS GUIDE\n\n" +
+<button class="district-btn high"
+onclick="updateDistrict(
+'Idukki',
+'HIGH',
+'Landslide and dam overflow concerns.',
+[
+'Hill Region Relief Center',
+'Government School Shelter',
+'Primary Health Emergency Point'
+],
+'1077'
+)">
+Idukki
+</button>
 
-"1. Store clean drinking water\n\n" +
+<button class="district-btn low"
+onclick="updateDistrict(
+'Kannur',
+'LOW',
+'Lower flood risk region.',
+[
+'Kannur Relief Shelter',
+'Community Emergency Hall',
+'Government School Flood Center'
+],
+'1077'
+)">
+Kannur
+</button>
 
-"2. Keep emergency food supplies\n\n" +
+</div>
 
-"3. Charge phones and power banks\n\n" +
+</div>
 
-"4. Save emergency contact numbers\n\n" +
+<div class="info-panel">
 
-"5. Locate nearest relief shelter\n\n" +
+<h2 class="section-title">
+District Information
+</h2>
 
-"6. Keep a first aid kit ready\n\n" +
+<div class="card">
+<h3>Selected District</h3>
+<p id="districtName">
+Select a district
+</p>
+</div>
 
-"7. Follow Kerala flood alerts"
-);
+<div class="card">
+<h3>Flood Risk Level</h3>
+<p id="riskLevel">-</p>
+</div>
 
-}
+<div class="card">
+<h3>Safety Information</h3>
+<p id="safetyInfo">
+Choose a district
+</p>
+</div>
 
-function showHelplines(){
+<div class="card">
+<h3>Nearby Relief Shelters</h3>
 
-alert(
-"KERALA EMERGENCY HELPLINE NUMBERS\n\n" +
+<div id="shelters">
+<p>Select a district</p>
+</div>
 
-"State Emergency: 1077\n\n" +
+</div>
 
-"Disaster Management: 1070\n\n" +
+<div class="card emergency">
+<h3>Emergency Helpline</h3>
+<p id="helpline">1077</p>
+</div>
 
-"Police: 100 / 112\n\n" +
+<button
+class="guide-btn"
+onclick="showGuide()">
+Emergency Preparedness Guide
+</button>
 
-"Ambulance: 108\n\n" +
+<button
+class="guide-btn"
+onclick="showHelplines()"
+style="margin-top:10px;">
+Emergency Numbers
+</button>
 
-"Fire & Rescue: 101\n\n" +
+</div>
 
-"Women Helpline: 1091\n\n" +
+</div>
 
-"Child Helpline: 1098"
-);
+<script src="script.js"></script>
 
-}
+</body>
+</html>
