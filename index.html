@@ -20,10 +20,11 @@
 
 <div class="map-section">
 
-<h2 class="section-title">Kerala Flood Risk Map</h2>
+<h2 class="section-title">
+Kerala Flood Risk Map
+</h2>
 
 <div class="map-container">
-
 <img src="kerala-map.svg" alt="Kerala Map">
 
 <div class="legend">
@@ -31,7 +32,6 @@
 <div class="legend-item">Medium Risk</div>
 <div class="legend-item">High Risk</div>
 </div>
-
 </div>
 
 <div class="district-buttons">
@@ -42,9 +42,10 @@ onclick="updateDistrict(
 'HIGH',
 'High flood susceptibility detected. Monitor alerts.',
 [
-'Government Higher Secondary School Relief Camp',
-'Alappuzha Community Hall Shelter',
-'Taluk Emergency Relief Center'
+'Government Higher Secondary School, Chengannur',
+'Kuttanad Taluk Relief Camp',
+'Alappuzha Community Hall',
+'Mannar Flood Relief Centre'
 ],
 '1077'
 )">Alappuzha</button>
@@ -55,9 +56,10 @@ onclick="updateDistrict(
 'MEDIUM',
 'Urban flooding possible during heavy rainfall.',
 [
-'Ernakulam Government School Shelter',
-'Community Flood Relief Hall',
-'District Emergency Support Center'
+'Aluva Relief Camp',
+'Kanayannur Taluk Centre',
+'Paravur Flood Shelter',
+'Perumbavoor Community Hall'
 ],
 '1077'
 )">Ernakulam</button>
@@ -68,9 +70,9 @@ onclick="updateDistrict(
 'HIGH',
 'Landslide and dam overflow concerns.',
 [
-'Hill Region Relief Center',
-'Government School Shelter',
-'Primary Health Emergency Point'
+'Adimali Emergency Shelter',
+'Thodupuzha Relief Centre',
+'Hill Region Medical Camp'
 ],
 '1077'
 )">Idukki</button>
@@ -82,8 +84,7 @@ onclick="updateDistrict(
 'Lower flood risk region.',
 [
 'Kannur Relief Shelter',
-'Community Emergency Hall',
-'Government School Flood Center'
+'Taliparamba Community Hall'
 ],
 '1077'
 )">Kannur</button>
@@ -94,9 +95,8 @@ onclick="updateDistrict(
 'LOW',
 'Generally lower flood-risk district.',
 [
-'Kasaragod Shelter Center',
-'Village Relief Hall',
-'Primary Medical Shelter'
+'Kasaragod Shelter Centre',
+'Village Relief Hall'
 ],
 '1077'
 )">Kasaragod</button>
@@ -107,9 +107,9 @@ onclick="updateDistrict(
 'MEDIUM',
 'Flood monitoring advised during storms.',
 [
-'Kollam Flood Relief Camp',
-'Government School Shelter',
-'District Community Center'
+'Punalur Relief Centre',
+'Karunagappally Shelter',
+'Kollam Taluk Flood Camp'
 ],
 '1077'
 )">Kollam</button>
@@ -120,9 +120,9 @@ onclick="updateDistrict(
 'HIGH',
 'Heavy monsoon flood risk detected.',
 [
-'Kottayam Shelter Center',
-'Community Hall Camp',
-'Emergency Medical Point'
+'Changanassery Relief Camp',
+'Kottayam Community Hall',
+'Pala Flood Support Centre'
 ],
 '1077'
 )">Kottayam</button>
@@ -134,8 +134,7 @@ onclick="updateDistrict(
 'Flood alerts during strong rainfall.',
 [
 'Kozhikode Relief Shelter',
-'District Hall',
-'Government School Emergency Camp'
+'District Emergency Hall'
 ],
 '1077'
 )">Kozhikode</button>
@@ -146,9 +145,8 @@ onclick="updateDistrict(
 'MEDIUM',
 'Localized river flooding possible.',
 [
-'Malappuram Shelter Point',
-'Village Emergency Hall',
-'Flood Safety Camp'
+'Malappuram Flood Camp',
+'Community Emergency Hall'
 ],
 '1077'
 )">Malappuram</button>
@@ -160,8 +158,7 @@ onclick="updateDistrict(
 'Mostly lower flood-risk area.',
 [
 'Palakkad Relief Hall',
-'School Flood Shelter',
-'Community Safety Point'
+'School Flood Shelter'
 ],
 '1077'
 )">Palakkad</button>
@@ -172,9 +169,10 @@ onclick="updateDistrict(
 'HIGH',
 'Flood-prone district with preparedness priority.',
 [
-'Pathanamthitta Relief Camp',
-'Government School Shelter',
-'Flood Emergency Center'
+'Adoor Taluk Relief Camp',
+'Konni Government School Shelter',
+'Kozhencherry Relief Centre',
+'Ranni Emergency Camp'
 ],
 '1077'
 )">Pathanamthitta</button>
@@ -185,9 +183,9 @@ onclick="updateDistrict(
 'MEDIUM',
 'Urban drainage flooding possible.',
 [
-'Trivandrum Relief Shelter',
-'District Hall Camp',
-'Medical Support Center'
+'Enchakkal Government UP School',
+'Pozhiyoor Relief Camp',
+'District Emergency Operations Centre'
 ],
 '1077'
 )">Thiruvananthapuram</button>
@@ -199,8 +197,7 @@ onclick="updateDistrict(
 'Moderate flood risk during heavy rain.',
 [
 'Thrissur Flood Shelter',
-'Government School Relief Camp',
-'Community Hall Center'
+'Government School Relief Camp'
 ],
 '1077'
 )">Thrissur</button>
@@ -211,9 +208,9 @@ onclick="updateDistrict(
 'HIGH',
 'Landslide and heavy rainfall danger zone.',
 [
-'Wayanad Emergency Camp',
-'Hill Region Shelter',
-'Medical Relief Point'
+'Kalpetta Relief Camp',
+'Mananthavady Shelter',
+'Sulthan Bathery Emergency Centre'
 ],
 '1077'
 )">Wayanad</button>
@@ -230,7 +227,9 @@ District Information Dashboard
 
 <div class="card">
 <h3>Selected District</h3>
-<p id="districtName">Select a district</p>
+<p id="districtName">
+Select a district
+</p>
 </div>
 
 <div class="card">
@@ -246,7 +245,7 @@ Choose a district to view preparedness information.
 </div>
 
 <div class="card">
-<h3>Nearby Relief Shelters</h3>
+<h3>Nearby Relief Centres</h3>
 <div id="shelters">
 <p>Select a district</p>
 </div>
@@ -286,15 +285,14 @@ Emergency Numbers
 <h2>About This Project</h2>
 
 <p>
-Kerala experiences seasonal flooding that affects
-communities, transport systems, and public safety.
+Kerala experiences seasonal flooding that affects communities,
+transport systems, and public safety.
 </p>
 
 <p>
-This project explores how interactive mapping can
-improve disaster preparedness by helping users
-access flood risk, nearby shelters, emergency
-contacts, and preparedness guidance.
+This project explores how interactive mapping can improve
+disaster preparedness by helping users access flood risk,
+nearby shelters, emergency contacts, and preparedness guidance.
 </p>
 
 </section>
