@@ -1,317 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+function updateDistrict(
+name,
+risk,
+info,
+shelters,
+helpline
+){
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+document.getElementById("districtName").innerText = name;
+document.getElementById("riskLevel").innerText = risk;
+document.getElementById("safetyInfo").innerText = info;
+document.getElementById("helpline").innerText = helpline;
 
-<title>Kerala Flood Safe Interactive Map</title>
+const shelterContainer =
+document.getElementById("shelters");
 
-<link rel="stylesheet" href="style.css">
-</head>
+shelterContainer.innerHTML = "";
 
-<body>
+shelters.forEach(function(shelter){
 
-<header>
-<h1>Kerala Flood Safe Interactive Map</h1>
-<p>
-Interactive Disaster Awareness & Emergency Preparedness Dashboard
-</p>
-</header>
+const p = document.createElement("p");
 
-<div class="container">
+p.innerText = shelter;
 
-<div class="map-section">
+shelterContainer.appendChild(p);
 
-<h2 class="section-title">
-Kerala Flood Risk Map
-</h2>
+});
 
-<div class="map-container">
+}
 
-<img src="kerala-map.svg" alt="Kerala Map">
+function showGuide(){
 
-<div class="legend">
-<div class="legend-item">🟢 Low Risk</div>
-<div class="legend-item">🟡 Medium Risk</div>
-<div class="legend-item">🔴 High Risk</div>
-</div>
+alert(
+"KERALA FLOOD EMERGENCY PREPAREDNESS GUIDE\n\n" +
 
-</div>
+"1. Store clean drinking water\n\n" +
 
-<div class="district-buttons">
+"2. Keep emergency food supplies\n\n" +
 
-<button class="district-btn high"
-onclick="updateDistrict(
-'Alappuzha',
-'HIGH',
-'High flood susceptibility detected. Monitor alerts.',
-[
-'Government Higher Secondary School Relief Camp',
-'Alappuzha Community Hall Shelter',
-'Taluk Emergency Relief Center'
-],
-'1077'
-)">
-Alappuzha
-</button>
+"3. Charge phones and power banks\n\n" +
 
-<button class="district-btn medium"
-onclick="updateDistrict(
-'Ernakulam',
-'MEDIUM',
-'Urban flooding possible during heavy rainfall.',
-[
-'Ernakulam Govt School Shelter',
-'Community Flood Relief Hall',
-'District Emergency Support Center'
-],
-'1077'
-)">
-Ernakulam
-</button>
+"4. Save emergency contact numbers\n\n" +
 
-<button class="district-btn high"
-onclick="updateDistrict(
-'Idukki',
-'HIGH',
-'Landslide and dam overflow concerns.',
-[
-'Hill Region Relief Center',
-'Government School Shelter',
-'Primary Health Emergency Point'
-],
-'1077'
-)">
-Idukki
-</button>
+"5. Locate nearest relief shelter\n\n" +
 
-<button class="district-btn low"
-onclick="updateDistrict(
-'Kannur',
-'LOW',
-'Lower flood risk region.',
-[
-'Kannur Relief Shelter',
-'Community Emergency Hall',
-'Govt School Flood Center'
-],
-'1077'
-)">
-Kannur
-</button>
+"6. Keep a first aid kit ready\n\n" +
 
-<button class="district-btn low"
-onclick="updateDistrict(
-'Kasaragod',
-'LOW',
-'Generally lower flood-risk district.',
-[
-'Kasaragod Shelter Center',
-'Village Relief Hall',
-'Primary Medical Shelter'
-],
-'1077'
-)">
-Kasaragod
-</button>
+"7. Follow Kerala flood alerts"
+);
 
-<button class="district-btn medium"
-onclick="updateDistrict(
-'Kollam',
-'MEDIUM',
-'Flood monitoring advised during storms.',
-[
-'Kollam Flood Relief Camp',
-'Government School Shelter',
-'District Community Center'
-],
-'1077'
-)">
-Kollam
-</button>
+}
 
-<button class="district-btn high"
-onclick="updateDistrict(
-'Kottayam',
-'HIGH',
-'Heavy monsoon flood risk detected.',
-[
-'Kottayam Shelter Center',
-'Community Hall Camp',
-'Emergency Medical Point'
-],
-'1077'
-)">
-Kottayam
-</button>
+function showHelplines(){
 
-<button class="district-btn medium"
-onclick="updateDistrict(
-'Kozhikode',
-'MEDIUM',
-'Flood alerts during strong rainfall.',
-[
-'Kozhikode Relief Shelter',
-'District Hall',
-'Govt School Emergency Camp'
-],
-'1077'
-)">
-Kozhikode
-</button>
+alert(
+"KERALA EMERGENCY HELPLINE NUMBERS\n\n" +
 
-<button class="district-btn medium"
-onclick="updateDistrict(
-'Malappuram',
-'MEDIUM',
-'Localized river flooding possible.',
-[
-'Malappuram Shelter Point',
-'Village Emergency Hall',
-'Flood Safety Camp'
-],
-'1077'
-)">
-Malappuram
-</button>
+"State Emergency: 1077\n\n" +
 
-<button class="district-btn low"
-onclick="updateDistrict(
-'Palakkad',
-'LOW',
-'Mostly lower flood-risk area.',
-[
-'Palakkad Relief Hall',
-'School Flood Shelter',
-'Community Safety Point'
-],
-'1077'
-)">
-Palakkad
-</button>
+"Disaster Management: 1070\n\n" +
 
-<button class="district-btn high"
-onclick="updateDistrict(
-'Pathanamthitta',
-'HIGH',
-'Flood-prone district with preparedness priority.',
-[
-'Pathanamthitta Relief Camp',
-'Govt School Shelter',
-'Flood Emergency Center'
-],
-'1077'
-)">
-Pathanamthitta
-</button>
+"Police: 100 / 112\n\n" +
 
-<button class="district-btn medium"
-onclick="updateDistrict(
-'Thiruvananthapuram',
-'MEDIUM',
-'Urban drainage flooding possible.',
-[
-'Trivandrum Relief Shelter',
-'District Hall Camp',
-'Medical Support Center'
-],
-'1077'
-)">
-Thiruvananthapuram
-</button>
+"Ambulance: 108\n\n" +
 
-<button class="district-btn medium"
-onclick="updateDistrict(
-'Thrissur',
-'MEDIUM',
-'Moderate flood risk during heavy rain.',
-[
-'Thrissur Flood Shelter',
-'Govt School Relief Camp',
-'Community Hall Center'
-],
-'1077'
-)">
-Thrissur
-</button>
+"Fire & Rescue: 101\n\n" +
 
-<button class="district-btn high"
-onclick="updateDistrict(
-'Wayanad',
-'HIGH',
-'Landslide and heavy rainfall danger zone.',
-[
-'Wayanad Emergency Camp',
-'Hill Region Shelter',
-'Medical Relief Point'
-],
-'1077'
-)">
-Wayanad
-</button>
+"Women Helpline: 1091\n\n" +
 
-</div>
+"Child Helpline: 1098"
+);
 
-</div>
-
-<div class="info-panel">
-
-<h2 class="section-title">
-District Information Dashboard
-</h2>
-
-<div class="card">
-<h3>📍 Selected District</h3>
-<p id="districtName">
-Select a district
-</p>
-</div>
-
-<div class="card">
-<h3>⚠️ Flood Risk Level</h3>
-<p id="riskLevel">-</p>
-</div>
-
-<div class="card">
-<h3>🛟 Safety Information</h3>
-<p id="safetyInfo">
-Choose a district to view preparedness information.
-</p>
-</div>
-
-<div class="card">
-<h3>🏠 Nearby Relief Shelters</h3>
-<div id="shelters">
-<p>Select a district</p>
-</div>
-</div>
-
-<div class="card emergency">
-<h3>☎️ Emergency Helpline</h3>
-<p id="helpline">1077</p>
-</div>
-
-<div class="card">
-<h3>🎒 Flood Emergency Checklist</h3>
-<p>✅ Drinking Water</p>
-<p>✅ First Aid Kit</p>
-<p>✅ Power Bank</p>
-<p>✅ Flashlight</p>
-<p>✅ Emergency Food</p>
-</div>
-
-<button
-class="guide-btn"
-onclick="showGuide()">
-View Emergency Preparedness Guide
-</button>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+}
