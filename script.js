@@ -2,32 +2,50 @@ function updateDistrict(
 name,
 risk,
 info,
-shelter,
+shelters,
 helpline
 ){
+
 document.getElementById("districtName").innerText = name;
 document.getElementById("riskLevel").innerText = risk;
 document.getElementById("safetyInfo").innerText = info;
-document.getElementById("shelters").innerText = shelter;
 document.getElementById("helpline").innerText = helpline;
+
+const shelterContainer =
+document.getElementById("shelters");
+
+shelterContainer.innerHTML = "";
+
+shelters.forEach(function(shelter){
+
+const p = document.createElement("p");
+
+p.innerHTML = "🏠 " + shelter;
+
+shelterContainer.appendChild(p);
+
+});
+
 }
 
-function showGuide() {
+function showGuide(){
+
 alert(
 "KERALA FLOOD EMERGENCY PREPAREDNESS GUIDE\n\n" +
 
-"1. Store clean drinking water\n\n" +
+"✅ Store clean drinking water\n\n" +
 
-"2. Keep emergency food supplies\n\n" +
+"✅ Keep emergency food supplies\n\n" +
 
-"3. Charge power banks and phones\n\n" +
+"✅ Charge phones and power banks\n\n" +
 
-"4. Save emergency contact numbers\n\n" +
+"✅ Save emergency contact numbers\n\n" +
 
-"5. Locate nearest relief shelters\n\n" +
+"✅ Locate nearest relief shelter\n\n" +
 
-"6. Keep a first aid kit ready\n\n" +
+"✅ Keep first aid kit ready\n\n" +
 
-"7. Follow Kerala flood alerts and weather warnings"
+"✅ Follow Kerala flood alerts"
 );
+
 }
