@@ -19,12 +19,18 @@
 
 <div class="map-section">
 
-<h2 class="section-title">
-Kerala Flood Risk Map
-</h2>
+<h2 class="section-title">Kerala Flood Risk Map</h2>
 
 <div class="map-container">
+
 <img src="kerala-map.svg" alt="Kerala Map">
+
+<div class="legend">
+<div class="legend-item">Low Risk</div>
+<div class="legend-item">Medium Risk</div>
+<div class="legend-item">High Risk</div>
+</div>
+
 </div>
 
 <div class="district-buttons">
@@ -33,16 +39,14 @@ Kerala Flood Risk Map
 onclick="updateDistrict(
 'Alappuzha',
 'HIGH',
-'High flood susceptibility detected.',
+'High flood susceptibility detected. Monitor alerts.',
 [
 'Government Higher Secondary School Relief Camp',
 'Alappuzha Community Hall Shelter',
 'Taluk Emergency Relief Center'
 ],
 '1077'
-)">
-Alappuzha
-</button>
+)">Alappuzha</button>
 
 <button class="district-btn medium"
 onclick="updateDistrict(
@@ -50,14 +54,12 @@ onclick="updateDistrict(
 'MEDIUM',
 'Urban flooding possible during heavy rainfall.',
 [
-'Government School Shelter',
-'Community Relief Hall',
+'Ernakulam Government School Shelter',
+'Community Flood Relief Hall',
 'District Emergency Support Center'
 ],
 '1077'
-)">
-Ernakulam
-</button>
+)">Ernakulam</button>
 
 <button class="district-btn high"
 onclick="updateDistrict(
@@ -70,9 +72,7 @@ onclick="updateDistrict(
 'Primary Health Emergency Point'
 ],
 '1077'
-)">
-Idukki
-</button>
+)">Idukki</button>
 
 <button class="district-btn low"
 onclick="updateDistrict(
@@ -85,9 +85,137 @@ onclick="updateDistrict(
 'Government School Flood Center'
 ],
 '1077'
-)">
-Kannur
-</button>
+)">Kannur</button>
+
+<button class="district-btn low"
+onclick="updateDistrict(
+'Kasaragod',
+'LOW',
+'Generally lower flood-risk district.',
+[
+'Kasaragod Shelter Center',
+'Village Relief Hall',
+'Primary Medical Shelter'
+],
+'1077'
+)">Kasaragod</button>
+
+<button class="district-btn medium"
+onclick="updateDistrict(
+'Kollam',
+'MEDIUM',
+'Flood monitoring advised during storms.',
+[
+'Kollam Flood Relief Camp',
+'Government School Shelter',
+'District Community Center'
+],
+'1077'
+)">Kollam</button>
+
+<button class="district-btn high"
+onclick="updateDistrict(
+'Kottayam',
+'HIGH',
+'Heavy monsoon flood risk detected.',
+[
+'Kottayam Shelter Center',
+'Community Hall Camp',
+'Emergency Medical Point'
+],
+'1077'
+)">Kottayam</button>
+
+<button class="district-btn medium"
+onclick="updateDistrict(
+'Kozhikode',
+'MEDIUM',
+'Flood alerts during strong rainfall.',
+[
+'Kozhikode Relief Shelter',
+'District Hall',
+'Government School Emergency Camp'
+],
+'1077'
+)">Kozhikode</button>
+
+<button class="district-btn medium"
+onclick="updateDistrict(
+'Malappuram',
+'MEDIUM',
+'Localized river flooding possible.',
+[
+'Malappuram Shelter Point',
+'Village Emergency Hall',
+'Flood Safety Camp'
+],
+'1077'
+)">Malappuram</button>
+
+<button class="district-btn low"
+onclick="updateDistrict(
+'Palakkad',
+'LOW',
+'Mostly lower flood-risk area.',
+[
+'Palakkad Relief Hall',
+'School Flood Shelter',
+'Community Safety Point'
+],
+'1077'
+)">Palakkad</button>
+
+<button class="district-btn high"
+onclick="updateDistrict(
+'Pathanamthitta',
+'HIGH',
+'Flood-prone district with preparedness priority.',
+[
+'Pathanamthitta Relief Camp',
+'Government School Shelter',
+'Flood Emergency Center'
+],
+'1077'
+)">Pathanamthitta</button>
+
+<button class="district-btn medium"
+onclick="updateDistrict(
+'Thiruvananthapuram',
+'MEDIUM',
+'Urban drainage flooding possible.',
+[
+'Trivandrum Relief Shelter',
+'District Hall Camp',
+'Medical Support Center'
+],
+'1077'
+)">Thiruvananthapuram</button>
+
+<button class="district-btn medium"
+onclick="updateDistrict(
+'Thrissur',
+'MEDIUM',
+'Moderate flood risk during heavy rain.',
+[
+'Thrissur Flood Shelter',
+'Government School Relief Camp',
+'Community Hall Center'
+],
+'1077'
+)">Thrissur</button>
+
+<button class="district-btn high"
+onclick="updateDistrict(
+'Wayanad',
+'HIGH',
+'Landslide and heavy rainfall danger zone.',
+[
+'Wayanad Emergency Camp',
+'Hill Region Shelter',
+'Medical Relief Point'
+],
+'1077'
+)">Wayanad</button>
 
 </div>
 
@@ -96,14 +224,12 @@ Kannur
 <div class="info-panel">
 
 <h2 class="section-title">
-District Information
+District Information Dashboard
 </h2>
 
 <div class="card">
 <h3>Selected District</h3>
-<p id="districtName">
-Select a district
-</p>
+<p id="districtName">Select a district</p>
 </div>
 
 <div class="card">
@@ -114,17 +240,15 @@ Select a district
 <div class="card">
 <h3>Safety Information</h3>
 <p id="safetyInfo">
-Choose a district
+Choose a district to view preparedness information.
 </p>
 </div>
 
 <div class="card">
 <h3>Nearby Relief Shelters</h3>
-
 <div id="shelters">
 <p>Select a district</p>
 </div>
-
 </div>
 
 <div class="card emergency">
@@ -132,14 +256,21 @@ Choose a district
 <p id="helpline">1077</p>
 </div>
 
-<button
-class="guide-btn"
+<div class="card">
+<h3>Flood Emergency Checklist</h3>
+<p>Drinking Water</p>
+<p>First Aid Kit</p>
+<p>Power Bank</p>
+<p>Flashlight</p>
+<p>Emergency Food</p>
+</div>
+
+<button class="guide-btn"
 onclick="showGuide()">
 Emergency Preparedness Guide
 </button>
 
-<button
-class="guide-btn"
+<button class="guide-btn"
 onclick="showHelplines()"
 style="margin-top:10px;">
 Emergency Numbers
