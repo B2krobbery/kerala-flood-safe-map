@@ -1,135 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerala Flood Safe Interactive Map</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala Flood Safe Interactive Map</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-        body{
-            background:#f4f7fb;
-        }
+body{
+    background:#eef4fb;
+}
 
-        header{
-            background:#0f172a;
-            color:white;
-            padding:20px;
-            text-align:center;
-            box-shadow:0 2px 10px rgba(0,0,0,0.2);
-        }
+header{
+    background:#0f172a;
+    color:white;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
 
-        header h1{
-            font-size:32px;
-        }
+header h1{
+    font-size:32px;
+}
 
-        .container{
-            display:flex;
-            gap:20px;
-            padding:20px;
-        }
+.container{
+    display:flex;
+    gap:20px;
+    padding:20px;
+}
 
-        .map-section{
-            flex:2;
-            background:white;
-            border-radius:15px;
-            padding:20px;
-            box-shadow:0 2px 15px rgba(0,0,0,0.1);
-        }
+.map-section{
+    flex:2;
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
 
-        .info-panel{
-            flex:1;
-            background:white;
-            border-radius:15px;
-            padding:20px;
-            box-shadow:0 2px 15px rgba(0,0,0,0.1);
-        }
+.info-panel{
+    flex:1;
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
 
-        .map-box{
-            height:500px;
-            border-radius:15px;
-            background:#dbeafe;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            font-size:24px;
-            color:#1e3a8a;
-            border:2px dashed #2563eb;
-        }
+.map-box{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
 
-        .risk{
-            padding:10px;
-            border-radius:10px;
-            margin-top:15px;
-            font-weight:bold;
-        }
+.district{
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
+}
 
-        .high{
-            background:#fecaca;
-            color:#991b1b;
-        }
+.district:hover{
+    transform:scale(1.03);
+}
 
-        button{
-            width:100%;
-            padding:12px;
-            border:none;
-            border-radius:10px;
-            background:#2563eb;
-            color:white;
-            font-size:16px;
-            margin-top:15px;
-            cursor:pointer;
-        }
+.high{
+    background:#fecaca;
+    color:#991b1b;
+}
 
-        button:hover{
-            opacity:0.9;
-        }
-    </style>
+.medium{
+    background:#fde68a;
+    color:#92400e;
+}
+
+.low{
+    background:#bbf7d0;
+    color:#166534;
+}
+
+.card{
+    background:#f8fafc;
+    border-radius:15px;
+    padding:15px;
+    margin-top:15px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+</style>
 </head>
 <body>
 
 <header>
     <h1>Kerala Flood Safe Interactive Map</h1>
-    <p>Smart Flood Awareness & Emergency Preparedness Dashboard</p>
+    <p>Disaster Awareness & Emergency Preparedness Dashboard</p>
 </header>
 
 <div class="container">
 
     <div class="map-section">
-        <h2>Kerala Flood Risk Map</h2>
+        <h2>Select District</h2>
 
         <div class="map-box">
-            Kerala Map Will Be Added Here
+
+            <div class="district high"
+            onclick="showDistrict('Alappuzha','HIGH','Safe shelters available','1077')">
+            Alappuzha
+            </div>
+
+            <div class="district medium"
+            onclick="showDistrict('Thrissur','MEDIUM','Stay alert during heavy rain','1077')">
+            Thrissur
+            </div>
+
+            <div class="district high"
+            onclick="showDistrict('Pathanamthitta','HIGH','Flood-prone area warning','1077')">
+            Pathanamthitta
+            </div>
+
+            <div class="district low"
+            onclick="showDistrict('Kasaragod','LOW','Low flood risk zone','1077')">
+            Kasaragod
+            </div>
+
         </div>
     </div>
 
     <div class="info-panel">
         <h2>District Information</h2>
 
-        <p><strong>District:</strong> Alappuzha</p>
-
-        <div class="risk high">
-            Flood Risk: HIGH
+        <div class="card">
+            <p><strong>District:</strong>
+            <span id="districtName">Select a district</span></p>
         </div>
 
-        <p style="margin-top:15px;">
-            Safe shelters available nearby.
-        </p>
+        <div class="card">
+            <p><strong>Flood Risk:</strong>
+            <span id="riskLevel">-</span></p>
+        </div>
 
-        <p style="margin-top:10px;">
-            Emergency helpline: 1077
-        </p>
+        <div class="card">
+            <p><strong>Safety Info:</strong></p>
+            <p id="safetyInfo">Choose a district to view details.</p>
+        </div>
 
-        <button>View Evacuation Route</button>
+        <div class="card">
+            <p><strong>Emergency Helpline:</strong></p>
+            <p id="helpline">1077</p>
+        </div>
+
+        <button>View Evacuation Guidance</button>
     </div>
 
 </div>
+
+<script>
+function showDistrict(name,risk,info,helpline){
+    document.getElementById("districtName").innerText = name;
+    document.getElementById("riskLevel").innerText = risk;
+    document.getElementById("safetyInfo").innerText = info;
+    document.getElementById("helpline").innerText = helpline;
+}
+</script>
 
 </body>
 </html>
