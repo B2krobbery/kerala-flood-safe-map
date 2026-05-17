@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Flood Safe Interactive Map</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fb;
+        }
+
+        header{
+            background:#0f172a;
+            color:white;
+            padding:20px;
+            text-align:center;
+            box-shadow:0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1{
+            font-size:32px;
+        }
+
+        .container{
+            display:flex;
+            gap:20px;
+            padding:20px;
+        }
+
+        .map-section{
+            flex:2;
+            background:white;
+            border-radius:15px;
+            padding:20px;
+            box-shadow:0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-panel{
+            flex:1;
+            background:white;
+            border-radius:15px;
+            padding:20px;
+            box-shadow:0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-box{
+            height:500px;
+            border-radius:15px;
+            background:#dbeafe;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:24px;
+            color:#1e3a8a;
+            border:2px dashed #2563eb;
+        }
+
+        .risk{
+            padding:10px;
+            border-radius:10px;
+            margin-top:15px;
+            font-weight:bold;
+        }
+
+        .high{
+            background:#fecaca;
+            color:#991b1b;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:10px;
+            background:#2563eb;
+            color:white;
+            font-size:16px;
+            margin-top:15px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            opacity:0.9;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kerala Flood Safe Interactive Map</h1>
+    <p>Smart Flood Awareness & Emergency Preparedness Dashboard</p>
+</header>
+
+<div class="container">
+
+    <div class="map-section">
+        <h2>Kerala Flood Risk Map</h2>
+
+        <div class="map-box">
+            Kerala Map Will Be Added Here
+        </div>
+    </div>
+
+    <div class="info-panel">
+        <h2>District Information</h2>
+
+        <p><strong>District:</strong> Alappuzha</p>
+
+        <div class="risk high">
+            Flood Risk: HIGH
+        </div>
+
+        <p style="margin-top:15px;">
+            Safe shelters available nearby.
+        </p>
+
+        <p style="margin-top:10px;">
+            Emergency helpline: 1077
+        </p>
+
+        <button>View Evacuation Route</button>
+    </div>
+
+</div>
+
+</body>
+</html>
