@@ -1,12 +1,14 @@
 # Kerala Flood Safe Interactive Map
 
-![Project Screenshot](kerala-flood-safe-dashboard.png)
-
 ## Overview
 
 Kerala experiences seasonal flooding that affects communities, transport systems, and public safety. This project explores how an interactive mapping system can improve disaster preparedness by helping users quickly access flood risk information, nearby relief shelters, emergency contacts, and preparedness guidance.
 
 The project is designed as an easy-to-use disaster awareness dashboard for improving public preparedness during flood emergencies.
+
+## Dashboard Preview
+
+![Dashboard](kerala-flood-safe-dashboard.png)
 
 ## Features
 
@@ -47,12 +49,6 @@ This project demonstrates how interactive mapping concepts can help improve awar
 - Live flood alerts
 - GIS-based flood zone visualization
 - Real shelter database integration
-
-## Screenshot
-
-Dashboard Preview:
-
-![Dashboard](kerala-flood-safe-dashboard.png)
 
 ## Author
 
