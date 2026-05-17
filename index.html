@@ -14,16 +14,16 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#eef4fb;
+background:#edf4ff;
 color:#1e293b;
 }
 
 header{
-background:#0f172a;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
 color:white;
-padding:25px;
+padding:30px;
 text-align:center;
-box-shadow:0 2px 15px rgba(0,0,0,0.2);
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
 }
 
 header h1{
@@ -33,6 +33,7 @@ font-size:34px;
 header p{
 margin-top:8px;
 opacity:0.9;
+font-size:16px;
 }
 
 .container{
@@ -46,46 +47,52 @@ flex-wrap:wrap;
 flex:2;
 min-width:350px;
 background:white;
-border-radius:20px;
-padding:20px;
-box-shadow:0 4px 20px rgba(0,0,0,0.08);
+border-radius:22px;
+padding:22px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 .info-panel{
 flex:1;
-min-width:320px;
+min-width:330px;
 background:white;
-border-radius:20px;
-padding:20px;
-box-shadow:0 4px 20px rgba(0,0,0,0.08);
+border-radius:22px;
+padding:22px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.section-title{
+font-size:24px;
+margin-bottom:15px;
 }
 
 .map-container{
 background:#f8fafc;
-border-radius:20px;
-padding:15px;
+border-radius:18px;
+padding:18px;
 text-align:center;
+border:2px solid #e2e8f0;
 }
 
 .map-container img{
 width:100%;
-max-height:550px;
+max-height:520px;
 object-fit:contain;
 }
 
 .legend{
 display:flex;
-gap:12px;
 justify-content:center;
+gap:12px;
 margin-top:15px;
 flex-wrap:wrap;
 }
 
 .legend-item{
-background:#f1f5f9;
 padding:10px 15px;
 border-radius:12px;
 font-weight:bold;
+background:#f1f5f9;
 }
 
 .district-buttons{
@@ -95,16 +102,17 @@ grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
 
-button{
-border:none;
-border-radius:12px;
+.district-btn{
 padding:14px;
+border:none;
+border-radius:14px;
 cursor:pointer;
 font-weight:bold;
 transition:0.2s;
+font-size:14px;
 }
 
-button:hover{
+.district-btn:hover{
 transform:translateY(-2px);
 }
 
@@ -125,27 +133,36 @@ color:white;
 
 .card{
 background:#f8fafc;
-border-radius:15px;
+border-radius:16px;
 padding:16px;
 margin-top:15px;
+border-left:5px solid #2563eb;
 }
 
 .card h3{
 margin-bottom:8px;
+font-size:18px;
 }
 
 .emergency{
 background:#dbeafe;
 }
 
-.footer-btn{
+.guide-btn{
 width:100%;
+margin-top:20px;
+padding:15px;
 background:#2563eb;
 color:white;
-margin-top:20px;
+border:none;
+border-radius:14px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.2s;
 }
 
-.footer-btn:hover{
+.guide-btn:hover{
 background:#1d4ed8;
 }
 </style>
@@ -155,14 +172,14 @@ background:#1d4ed8;
 
 <header>
 <h1>Kerala Flood Safe Interactive Map</h1>
-<p>Disaster Awareness & Emergency Preparedness Dashboard</p>
+<p>Interactive Disaster Awareness & Emergency Preparedness Dashboard</p>
 </header>
 
 <div class="container">
 
 <div class="map-section">
 
-<h2>Kerala Flood Risk Map</h2>
+<h2 class="section-title">Kerala Flood Risk Map</h2>
 
 <div class="map-container">
 
@@ -178,33 +195,75 @@ background:#1d4ed8;
 
 <div class="district-buttons">
 
-<button class="high" onclick="updateDistrict('Alappuzha','HIGH','High flood susceptibility detected. Monitor alerts.','24 Relief Shelters','1077')">Alappuzha</button>
+<button class="district-btn high"
+onclick="updateDistrict('Alappuzha','HIGH','High flood susceptibility detected. Residents should monitor flood alerts.','24 Relief Shelters','1077')">
+Alappuzha
+</button>
 
-<button class="medium" onclick="updateDistrict('Ernakulam','MEDIUM','Urban flooding possible during monsoon.','22 Relief Shelters','1077')">Ernakulam</button>
+<button class="district-btn medium"
+onclick="updateDistrict('Ernakulam','MEDIUM','Urban flooding possible during heavy rainfall.','22 Relief Shelters','1077')">
+Ernakulam
+</button>
 
-<button class="high" onclick="updateDistrict('Idukki','HIGH','Landslide and dam overflow concerns.','17 Relief Shelters','1077')">Idukki</button>
+<button class="district-btn high"
+onclick="updateDistrict('Idukki','HIGH','Landslide and dam overflow concerns during monsoon.','17 Relief Shelters','1077')">
+Idukki
+</button>
 
-<button class="low" onclick="updateDistrict('Kannur','LOW','Generally lower flood risk region.','12 Relief Shelters','1077')">Kannur</button>
+<button class="district-btn low"
+onclick="updateDistrict('Kannur','LOW','Lower flood risk region with occasional local flooding.','12 Relief Shelters','1077')">
+Kannur
+</button>
 
-<button class="high" onclick="updateDistrict('Kasaragod','LOW','Low flood-risk district.','10 Relief Shelters','1077')">Kasaragod</button>
+<button class="district-btn low"
+onclick="updateDistrict('Kasaragod','LOW','Generally lower flood-risk district.','10 Relief Shelters','1077')">
+Kasaragod
+</button>
 
-<button class="high" onclick="updateDistrict('Kollam','MEDIUM','Flood monitoring advised.','16 Relief Shelters','1077')">Kollam</button>
+<button class="district-btn medium"
+onclick="updateDistrict('Kollam','MEDIUM','Flood monitoring advised during storms.','16 Relief Shelters','1077')">
+Kollam
+</button>
 
-<button class="medium" onclick="updateDistrict('Kottayam','HIGH','Heavy monsoon flood risk detected.','20 Relief Shelters','1077')">Kottayam</button>
+<button class="district-btn high"
+onclick="updateDistrict('Kottayam','HIGH','Heavy monsoon flood risk detected.','20 Relief Shelters','1077')">
+Kottayam
+</button>
 
-<button class="medium" onclick="updateDistrict('Kozhikode','MEDIUM','Flood alerts during strong rainfall.','19 Relief Shelters','1077')">Kozhikode</button>
+<button class="district-btn medium"
+onclick="updateDistrict('Kozhikode','MEDIUM','Flood alerts active during strong rainfall periods.','19 Relief Shelters','1077')">
+Kozhikode
+</button>
 
-<button class="medium" onclick="updateDistrict('Malappuram','MEDIUM','Localized river flooding possible.','18 Relief Shelters','1077')">Malappuram</button>
+<button class="district-btn medium"
+onclick="updateDistrict('Malappuram','MEDIUM','Localized river flooding possible.','18 Relief Shelters','1077')">
+Malappuram
+</button>
 
-<button class="low" onclick="updateDistrict('Palakkad','LOW','Mostly lower flood risk.','11 Relief Shelters','1077')">Palakkad</button>
+<button class="district-btn low"
+onclick="updateDistrict('Palakkad','LOW','Mostly lower flood-risk area.','11 Relief Shelters','1077')">
+Palakkad
+</button>
 
-<button class="high" onclick="updateDistrict('Pathanamthitta','HIGH','Flood-prone district. Emergency preparedness priority.','15 Relief Shelters','1077')">Pathanamthitta</button>
+<button class="district-btn high"
+onclick="updateDistrict('Pathanamthitta','HIGH','Flood-prone district with preparedness priority.','15 Relief Shelters','1077')">
+Pathanamthitta
+</button>
 
-<button class="medium" onclick="updateDistrict('Thiruvananthapuram','MEDIUM','Urban flooding possible during storms.','21 Relief Shelters','1077')">Thiruvananthapuram</button>
+<button class="district-btn medium"
+onclick="updateDistrict('Thiruvananthapuram','MEDIUM','Urban drainage flooding possible during storms.','21 Relief Shelters','1077')">
+Thiruvananthapuram
+</button>
 
-<button class="medium" onclick="updateDistrict('Thrissur','MEDIUM','Moderate flood risk during heavy rain.','18 Relief Shelters','1077')">Thrissur</button>
+<button class="district-btn medium"
+onclick="updateDistrict('Thrissur','MEDIUM','Moderate flood risk during heavy rain.','18 Relief Shelters','1077')">
+Thrissur
+</button>
 
-<button class="high" onclick="updateDistrict('Wayanad','HIGH','Landslide and heavy rainfall danger zone.','14 Relief Shelters','1077')">Wayanad</button>
+<button class="district-btn high"
+onclick="updateDistrict('Wayanad','HIGH','Landslide and heavy rainfall danger zone.','14 Relief Shelters','1077')">
+Wayanad
+</button>
 
 </div>
 
@@ -212,7 +271,9 @@ background:#1d4ed8;
 
 <div class="info-panel">
 
-<h2>District Information</h2>
+<h2 class="section-title">
+District Information Dashboard
+</h2>
 
 <div class="card">
 <h3>📍 Selected District</h3>
@@ -225,15 +286,15 @@ background:#1d4ed8;
 </div>
 
 <div class="card">
-<h3>🛟 Safety Information</h3>
-<p id="safetyInfo">
-Choose a district to view flood-related information.
-</p>
+<h3>🏠 Relief Shelters</h3>
+<p id="shelters">-</p>
 </div>
 
 <div class="card">
-<h3>🏠 Relief Shelters</h3>
-<p id="shelters">-</p>
+<h3>🛟 Safety Information</h3>
+<p id="safetyInfo">
+Choose a district to view flood preparedness information.
+</p>
 </div>
 
 <div class="card emergency">
@@ -241,7 +302,16 @@ Choose a district to view flood-related information.
 <p id="helpline">1077</p>
 </div>
 
-<button class="footer-btn">
+<div class="card">
+<h3>🎒 Flood Emergency Checklist</h3>
+<p>✅ Drinking Water</p>
+<p>✅ First Aid Kit</p>
+<p>✅ Power Bank</p>
+<p>✅ Flashlight</p>
+<p>✅ Emergency Food</p>
+</div>
+
+<button class="guide-btn">
 View Emergency Preparedness Guide
 </button>
 
