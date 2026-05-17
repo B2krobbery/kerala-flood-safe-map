@@ -42,156 +42,72 @@ Kerala Flood Risk Map
 <div class="district-buttons">
 
 <button class="district-btn high"
-onclick="updateDistrict(
-'Alappuzha',
-'HIGH',
-'High flood susceptibility detected. Monitor alerts.',
-'24 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Alappuzha','HIGH','High flood susceptibility detected. Monitor alerts.','24 Relief Shelters','1077')">
 Alappuzha
 </button>
 
 <button class="district-btn medium"
-onclick="updateDistrict(
-'Ernakulam',
-'MEDIUM',
-'Urban flooding possible during heavy rainfall.',
-'22 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Ernakulam','MEDIUM','Urban flooding possible during heavy rainfall.','22 Relief Shelters','1077')">
 Ernakulam
 </button>
 
 <button class="district-btn high"
-onclick="updateDistrict(
-'Idukki',
-'HIGH',
-'Landslide and dam overflow concerns.',
-'17 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Idukki','HIGH','Landslide and dam overflow concerns.','17 Relief Shelters','1077')">
 Idukki
 </button>
 
 <button class="district-btn low"
-onclick="updateDistrict(
-'Kannur',
-'LOW',
-'Lower flood risk region.',
-'12 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Kannur','LOW','Lower flood risk region.','12 Relief Shelters','1077')">
 Kannur
 </button>
 
 <button class="district-btn low"
-onclick="updateDistrict(
-'Kasaragod',
-'LOW',
-'Generally lower flood-risk district.',
-'10 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Kasaragod','LOW','Generally lower flood-risk district.','10 Relief Shelters','1077')">
 Kasaragod
 </button>
 
 <button class="district-btn medium"
-onclick="updateDistrict(
-'Kollam',
-'MEDIUM',
-'Flood monitoring advised during storms.',
-'16 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Kollam','MEDIUM','Flood monitoring advised during storms.','16 Relief Shelters','1077')">
 Kollam
 </button>
 
 <button class="district-btn high"
-onclick="updateDistrict(
-'Kottayam',
-'HIGH',
-'Heavy monsoon flood risk detected.',
-'20 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Kottayam','HIGH','Heavy monsoon flood risk detected.','20 Relief Shelters','1077')">
 Kottayam
 </button>
 
 <button class="district-btn medium"
-onclick="updateDistrict(
-'Kozhikode',
-'MEDIUM',
-'Flood alerts during strong rainfall.',
-'19 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Kozhikode','MEDIUM','Flood alerts during strong rainfall.','19 Relief Shelters','1077')">
 Kozhikode
 </button>
 
 <button class="district-btn medium"
-onclick="updateDistrict(
-'Malappuram',
-'MEDIUM',
-'Localized river flooding possible.',
-'18 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Malappuram','MEDIUM','Localized river flooding possible.','18 Relief Shelters','1077')">
 Malappuram
 </button>
 
 <button class="district-btn low"
-onclick="updateDistrict(
-'Palakkad',
-'LOW',
-'Mostly lower flood-risk area.',
-'11 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Palakkad','LOW','Mostly lower flood-risk area.','11 Relief Shelters','1077')">
 Palakkad
 </button>
 
 <button class="district-btn high"
-onclick="updateDistrict(
-'Pathanamthitta',
-'HIGH',
-'Flood-prone district with preparedness priority.',
-'15 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Pathanamthitta','HIGH','Flood-prone district with preparedness priority.','15 Relief Shelters','1077')">
 Pathanamthitta
 </button>
 
 <button class="district-btn medium"
-onclick="updateDistrict(
-'Thiruvananthapuram',
-'MEDIUM',
-'Urban drainage flooding possible.',
-'21 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Thiruvananthapuram','MEDIUM','Urban drainage flooding possible.','21 Relief Shelters','1077')">
 Thiruvananthapuram
 </button>
 
 <button class="district-btn medium"
-onclick="updateDistrict(
-'Thrissur',
-'MEDIUM',
-'Moderate flood risk during heavy rain.',
-'18 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Thrissur','MEDIUM','Moderate flood risk during heavy rain.','18 Relief Shelters','1077')">
 Thrissur
 </button>
 
 <button class="district-btn high"
-onclick="updateDistrict(
-'Wayanad',
-'HIGH',
-'Landslide and heavy rainfall danger zone.',
-'14 Relief Shelters',
-'1077'
-)">
+onclick="updateDistrict('Wayanad','HIGH','Landslide and heavy rainfall danger zone.','14 Relief Shelters','1077')">
 Wayanad
 </button>
 
@@ -236,7 +152,6 @@ Choose a district to view preparedness information.
 
 <div class="card">
 <h3>🎒 Flood Emergency Checklist</h3>
-
 <p>✅ Drinking Water</p>
 <p>✅ First Aid Kit</p>
 <p>✅ Power Bank</p>
@@ -244,7 +159,9 @@ Choose a district to view preparedness information.
 <p>✅ Emergency Food</p>
 </div>
 
-<button class="guide-btn">
+<button
+class="guide-btn"
+onclick="showGuide()">
 View Emergency Preparedness Guide
 </button>
 
