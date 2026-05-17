@@ -25,7 +25,6 @@ font-size:34px;
 header p{
 margin-top:8px;
 opacity:0.9;
-font-size:16px;
 }
 
 .container{
@@ -35,73 +34,71 @@ padding:20px;
 flex-wrap:wrap;
 }
 
+.map-section,
+.info-panel{
+background:white;
+border-radius:20px;
+padding:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
 .map-section{
 flex:2;
 min-width:350px;
-background:white;
-border-radius:22px;
-padding:22px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 .info-panel{
 flex:1;
-min-width:330px;
-background:white;
-border-radius:22px;
-padding:22px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
+min-width:320px;
 }
 
 .section-title{
-font-size:24px;
 margin-bottom:15px;
+font-size:24px;
 }
 
 .map-container{
 background:#f8fafc;
-border-radius:18px;
-padding:18px;
+padding:15px;
+border-radius:15px;
 text-align:center;
-border:2px solid #e2e8f0;
 }
 
 .map-container img{
 width:100%;
-max-height:520px;
+max-height:500px;
 object-fit:contain;
 }
 
 .legend{
 display:flex;
 justify-content:center;
-gap:12px;
+gap:10px;
 margin-top:15px;
 flex-wrap:wrap;
 }
 
 .legend-item{
-padding:10px 15px;
-border-radius:12px;
-font-weight:bold;
 background:#f1f5f9;
+padding:10px 15px;
+border-radius:10px;
+font-weight:bold;
 }
 
 .district-buttons{
-margin-top:20px;
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:12px;
+gap:10px;
+margin-top:20px;
 }
 
 .district-btn{
-padding:14px;
 border:none;
-border-radius:14px;
+padding:14px;
+border-radius:12px;
 cursor:pointer;
 font-weight:bold;
 transition:0.2s;
-font-size:14px;
 }
 
 .district-btn:hover{
@@ -125,15 +122,9 @@ color:white;
 
 .card{
 background:#f8fafc;
-border-radius:16px;
-padding:16px;
+padding:15px;
+border-radius:15px;
 margin-top:15px;
-border-left:5px solid #2563eb;
-}
-
-.card h3{
-margin-bottom:8px;
-font-size:18px;
 }
 
 .emergency{
@@ -142,20 +133,37 @@ background:#dbeafe;
 
 .guide-btn{
 width:100%;
-margin-top:20px;
 padding:15px;
+border:none;
+border-radius:12px;
 background:#2563eb;
 color:white;
-border:none;
-border-radius:14px;
 font-size:16px;
-font-weight:bold;
 cursor:pointer;
-transition:0.2s;
+margin-top:15px;
 }
 
 .guide-btn:hover{
 background:#1d4ed8;
+}
+
+.about-project{
+background:white;
+margin:20px;
+padding:30px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.about-project h2{
+margin-bottom:15px;
+font-size:28px;
+}
+
+.about-project p{
+line-height:1.8;
+margin-bottom:15px;
+color:#475569;
 }
 
 @media(max-width:900px){
